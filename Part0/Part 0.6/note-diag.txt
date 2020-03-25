@@ -1,0 +1,13 @@
+note over browser
+a) Browser loads the page
+b) User types the note in the textbox
+c) user posts the note
+end note
+
+
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+browser->server: note is sent as JSON-data with (content and date as entries)
+server-->browser: response with HTTP status code 201
+server-->browser: note is added to the page without refresh (Thus showing only new_note_spa on the entry)
+browser->server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server-->browser: HTML-code with new note, notes, main.css, main.js and data.json
